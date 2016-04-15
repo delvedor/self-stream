@@ -18,6 +18,10 @@ In the magic world of Nodejs for avoid this problem you can use streams.
 But as you probably know with streams you cannot read, transform and write the same file.  
 Here come to help **self-stream**, an "hack" solution to this problem.
 
+## Install
+```
+$ npm install self-stream --save
+```
 ## API
 
 #### selfStream(filename, transform, callback)
@@ -45,7 +49,7 @@ selfStream('file.md', transform, function (err) {
 
 ```
 
-As you can see in the source code self-stream uses pump to pipe all the streams and at the end it will rewrite the original file with the modified one.
+As you can see in the [source code](https://github.com/delvedor/self-stream/blob/master/selfStream.js) self-stream uses pump to pipe all the streams and at the end it will rewrite the original file with the modified one.
 
 ## Contributing
 If you feel you can help in any way, be it with examples, extra testing, or new features please open a pull request or open an issue.
