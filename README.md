@@ -16,9 +16,10 @@ fs.readFile('file.md', 'utf8', (readErr, data) => {
 And that's not a good thing, because you are loading the entire file in your working memory slowing down your application.  
 In the magic world of Nodejs for avoid this problem you can use streams.
 But as you probably know with streams you cannot read, transform and write the same file.  
-Here come to help **self-stream**, an "hack" solution to this problem.
+Here come to help **self-stream**, an "hack" solution to this problem.  
+The solution is not in-place, because in case of something fails during the transform process, you will not lose the original file.
 
-The solution is not in-place, because in case of something fails during the transform process you will not lose the original file.
+**Needs Node.js >= 4.4.1**
 
 ## Install
 ```
