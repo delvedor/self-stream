@@ -1,5 +1,5 @@
 # self-stream
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/) [![Build Status](https://travis-ci.org/delvedor/self-stream.svg?branch=master)](https://travis-ci.org/delvedor/self-stream)
 
 Sometimes you need to change something in a file and probably you will do:
 ```javascript
@@ -17,6 +17,8 @@ And that's not a good thing, because you are loading the entire file in your wor
 In the magic world of Nodejs for avoid this problem you can use streams.
 But as you probably know with streams you cannot read, transform and write the same file.  
 Here come to help **self-stream**, an "hack" solution to this problem.
+
+The solution is not in-place, because in case of something fails during the transform process you will not lose the original file.
 
 ## Install
 ```
