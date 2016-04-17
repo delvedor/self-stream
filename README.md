@@ -19,7 +19,8 @@ But as you probably know with streams you cannot read, transform and write the s
 Here come to help **self-stream**, an "hack" solution to this problem.  
 The solution is not in-place, because in case of something fails during the transform process, you will not lose the original file.
 
-**Needs Node.js >= 4.4.1**
+**Needs Node.js >= 4.4.1**  
+If are using **4.4.1 <= Node.js < 5** you need ***--es_staging*** flag
 
 ## Install
 ```
