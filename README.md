@@ -26,7 +26,7 @@ $ npm install self-stream --save
 
 #### selfStream(filename, transform, callback)
 *filename*: the file to change with the relative path  
-*transform*: array of functions with all the transforms  
+*transform*: is a function or an array of functions with all the transforms  
 *callback*: callback function  
 
 ### Example:
@@ -34,14 +34,13 @@ $ npm install self-stream --save
 const selfStream = require('self-stream')
 const through2 = require('through2')
 
-// transform is an array
-const transform = [through2(function (chunk, enc, cb) {
+const transform = through2(function (chunk, enc, cb) {
   for (var i = 0; i < chunk.length; i++) {
     if (chunk[i] === 97) chunk[i] = 122 // swap 'a' for 'z'
   }
   this.push(chunk)
   cb()
-})]
+})
 
 selfStream('file.md', transform, function (err) {
   if (err) return console.log(err)
