@@ -7,7 +7,7 @@ const fs = require('fs')
 fs.readFile('file.md', 'utf8', (readErr, data) => {
   if (readErr) return console.log(readErr)
   data = changeSomething(data)
-  fs.writeFile('file.md', 'utf8', (writeErr) => {
+  fs.writeFile('file.md', data, 'utf8', (writeErr) => {
     if (writeErr) return console.log(writeErr)
     console.log('done')
   })
