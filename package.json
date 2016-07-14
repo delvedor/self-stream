@@ -1,6 +1,6 @@
 {
   "name": "self-stream",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "self-stream is a small node module that streams your transformations to the same file.",
   "main": "selfStream.js",
   "scripts": {
@@ -27,12 +27,11 @@
   },
   "homepage": "https://github.com/delvedor/self-stream#readme",
   "dependencies": {
-    "is-array": "^1.0.1",
     "pump": "^1.0.1"
   },
   "devDependencies": {
-    "standard": "^6.0.8",
-    "tape": "^4.5.1",
+    "standard": "^7.1.2",
+    "tape": "^4.6.0",
     "through2": "^2.0.1"
   }
 }
