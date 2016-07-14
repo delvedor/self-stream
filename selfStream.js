@@ -1,6 +1,6 @@
 /*
  * Project: self-stream
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: delvedor
  * Twitter: @delvedor
  * License: MIT
@@ -11,7 +11,6 @@
 
 const fs = require('fs')
 const pump = require('pump')
-const isArray = require('is-array')
 
 /**
  * Applies read/transform/write to the same file.
@@ -26,7 +25,7 @@ module.exports = function selfStream (file, transformStream, callback) {
   const writeStream = fs.createWriteStream(`${file}.tmp`)
   // creates the array with all the transformation streams
   let arrayStream = transformStream
-  if (!isArray(arrayStream)) arrayStream = [transformStream]
+  if (!Array.isArray(arrayStream)) arrayStream = [transformStream]
   // pump togheter
   pump(readStream, ...arrayStream, writeStream, function pumpHandler (pumpErr) {
     if (pumpErr) return callback(pumpErr)
